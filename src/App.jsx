@@ -1,14 +1,14 @@
-import * as React from 'react';
-import { Grid } from "@mui/material"
-import Sidebar from './components/Sidebar'
+import React from "react";
+import { Box } from "@mui/material"
+import Sidebar from "./components/Sidebar"
+import Products from "./pages/Products"
 
 function App() {
-
   return (
-    <Grid container>
-      <h1>Hello World!</h1>
+    <Box sx={{ display: "flex" }}>
       <Sidebar />
-    </Grid>
+      <Products />
+    </Box>
   )
 }
 

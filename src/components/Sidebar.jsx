@@ -1,19 +1,16 @@
-import * as React from 'react';
-import Drawer from '@mui/material/Drawer';
-import Toolbar from '@mui/material/Toolbar';
-import List from '@mui/material/List';
-import Typography from '@mui/material/Typography';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
-import { Box, Link, ListItemIcon } from '@mui/material';
-import { Settings } from '@mui/icons-material';
-
-const drawerWidth = 240;
+import React from "react";
+import Drawer from "@mui/material/Drawer";
+import Toolbar from "@mui/material/Toolbar";
+import List from "@mui/material/List";
+import Typography from "@mui/material/Typography";
+import ListItem from "@mui/material/ListItem";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemText from "@mui/material/ListItemText";
+import { Box, Link, ListItemIcon } from "@mui/material";
+import { Settings } from "@mui/icons-material";
 
 export default function Sidebar() {
   return (
-
     <Drawer
       variant="permanent"
       anchor="left"
@@ -40,12 +37,12 @@ export default function Sidebar() {
   )
 }
 
-function SidebarLi({ title, selected, link }) {
+function SidebarLi({ title, selected }) {
   return (
     <ListItem disablePadding>
       <ListItemButton >
         <ListItemText>
-          <Typography align="center" sx={{ fontWeight: selected && 'bold' }}>
+          <Typography align="center" sx={{ fontWeight: selected && "bold" }}>
             {title}
           </Typography>
         </ListItemText>

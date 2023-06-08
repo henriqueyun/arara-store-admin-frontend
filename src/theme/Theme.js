@@ -1,6 +1,6 @@
-import { createTheme } from '@mui/material/styles';
-import { light } from '@mui/material/styles/createPalette';
-import { grey } from '@mui/material/colors'; 
+import { createTheme } from "@mui/material/styles";
+import { light } from "@mui/material/styles/createPalette";
+import { grey } from "@mui/material/colors";
 
 const theme = createTheme({
     mode: light,
@@ -9,7 +9,11 @@ const theme = createTheme({
             styleOverrides: {
                 paper: {
                     backgroundColor: grey[900],
-                    color: '#FFFFFF',
+                    color: "#FFFFFF",
+                    flexShrink: 0,
+                },
+                root: {
+                    flexShrink: 0,
                     width: 240,
                 }
             }
