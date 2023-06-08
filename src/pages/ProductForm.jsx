@@ -5,7 +5,8 @@ function ProductForm() {
     return (
         <Box component="main" sx={{ flexShrink: 0 }}>
             <Typography>Cadastro de Produtos</Typography>
-        </Box>);
+        </Box>
+    );
 }
 
 export default ProductForm;
