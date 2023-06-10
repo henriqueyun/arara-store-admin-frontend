@@ -1,24 +1,55 @@
-import React from "react";
-import { Products, NotFound } from "./pages";
-import { createBrowserRouter } from "react-router-dom";
+import React, { useContext } from 'react';
+import { CircularProgress, Grid, Typography } from '@mui/material';
+import { createBrowserRouter, useNavigate } from 'react-router-dom';
+import { Products, NotFound } from './pages';
+import Orders from './pages/Orders';
+import Login from './pages/Login';
+import { Context } from './context/AuthContext';
+import Order from './pages/Order';
 
 const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <PageElement element={<Products />} />,
-    },
-    {
-        path: "/products",
-        element: <PageElement element={<Products />} />,
-    },
-    {
-        path: "/*",
-        element: <PageElement element={<NotFound />} />,
-    }
+  {
+    path: '/',
+    element: <Component isPrivate variant={<Products />} />,
+  },
+  {
+    path: '/products',
+    element: <Component isPrivate variant={<Products />} />,
+  },
+  {
+    path: '/orders',
+    element: <Component isPrivate variant={<Orders />} />,
+  },
+  {
+    path: '/login',
+    element: <Component variant={<Login />} />,
+  },
+  {
+    path: '/order/:id',
+    element: <Component isPrivate variant={<Order />} />,
+  },
+  {
+    path: '/*',
+    element: <Component isPrivate variant={<NotFound />} />,
+  },
 ]);
 
-function PageElement({ element }) {
-    return (element);
+function Component({ isPrivate, variant }) {
+  const navigate = useNavigate();
+  const { loading, logged } = useContext(Context);
+  if (loading) {
+    // TODO: melhorar componente
+    return (
+      <Grid container my={20} justifyContent="center">
+        <CircularProgress color="inherit" />
+        <Typography variant="h1">Loading...</Typography>
+      </Grid>
+    );
+  }
+  if (isPrivate && !logged) {
+    return navigate('/login');
+  }
+  return variant;
 }
 
 export default router;
