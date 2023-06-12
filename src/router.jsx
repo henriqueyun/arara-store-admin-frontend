@@ -6,6 +6,7 @@ import Orders from './pages/Orders';
 import Login from './pages/Login';
 import { Context } from './context/AuthContext';
 import Order from './pages/Order';
+import ShowCase from './pages/ShowCase';
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
   {
     path: '/order/:id',
     element: <Component isPrivate variant={<Order />} />,
+  },
+  {
+    path: '/showCase',
+    element: <Component isPrivate variant={<ShowCase />} />,
   },
   {
     path: '/*',
