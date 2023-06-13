@@ -8,11 +8,6 @@ function formatCurrency(value) {
 }
 
 function calculateDiscount(price, discount) {
-  console.log(
-    '🚀 ~ file: index.js:11 ~ calculateDiscount ~ discount:',
-    discount,
-  );
-  console.log('🚀 ~ file: index.js:11 ~ calculateDiscount ~ price:', price);
   return price - (price / 100) * discount;
 }
 
