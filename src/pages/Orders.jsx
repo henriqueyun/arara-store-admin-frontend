@@ -26,7 +26,6 @@ export default function Orders() {
   useEffect(() => {
     const getOrders = async () => {
       const response = await client.order.findAll();
-      console.log('🚀 ~ file: Orders.jsx:29 ~ getOrders ~ response:', response);
       setOrders(response);
     };
     getOrders();
@@ -74,7 +73,7 @@ export default function Orders() {
                     </TableCell>
                     <TableCell align="center">
                       {formatCurrency(
-                        parseFloat(calculateOrderPrice(order.cart)) +
+                        parseFloat(calculateOrderPrice(order?.cart?.items)) +
                           parseFloat(order.shippingPrice),
                       )}
                     </TableCell>
