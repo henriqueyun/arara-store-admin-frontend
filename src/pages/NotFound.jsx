@@ -1,10 +1,8 @@
-import { Typography } from "@mui/material";
-import React from "react";
+import { Typography } from '@mui/material';
+import React from 'react';
 
 function NotFound() {
-    return (
-        <Typography>Você não deveria estar aqui 🤨</Typography>
-    );
+  return <Typography>Você não deveria estar aqui 🤨</Typography>;
 }
 
 export default NotFound;
