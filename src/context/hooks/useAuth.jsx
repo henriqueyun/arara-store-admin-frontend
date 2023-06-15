@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+// eslint-disable-next-line camelcase
+import jwt_decode from 'jwt-decode';
 import { setAuth, client } from '../../client';
 
 export default function useAuth() {
@@ -19,8 +21,11 @@ export default function useAuth() {
   async function signIn(email, password) {
     try {
       const {
-        data: { accessToken, loggedUser },
+        data: { accessToken },
       } = await client.auth.signIn({ email, password });
+      const loggedUser = jwt_decode(accessToken);
+      delete loggedUser.exp;
+      delete loggedUser.iat;
 
       localStorage.setItem('token', JSON.stringify(accessToken));
       localStorage.setItem('loggedUser', JSON.stringify(loggedUser));

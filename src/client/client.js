@@ -2,9 +2,7 @@ import axios from 'axios';
 import {
   ProductService,
   AuthService,
-  CartService,
   ShippingService,
-  AddressService,
   OrderService,
 } from './services';
 
@@ -30,9 +28,7 @@ function setAxiosConfig() {
 const client = {
   products: ProductService(axios),
   auth: AuthService(axios),
-  cart: CartService(axios),
   shipping: ShippingService(axios),
-  address: AddressService(axios),
   order: OrderService(axios),
 };
 
