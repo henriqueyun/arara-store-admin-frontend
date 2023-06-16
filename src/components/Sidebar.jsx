@@ -29,12 +29,20 @@ export default function Sidebar() {
           </List>
         </Box>
         <Box sx={{ display: 'flex' }}>
-          <List>
-            <ListItemButton onClick={signOut}>
-              <ListItemText>
-                <Typography align="rigth">Sair</Typography>
-              </ListItemText>
-            </ListItemButton>
+          <List
+            sx={{
+              display: 'flex',
+              flex: '1 1',
+              justifyContent: 'space-between',
+            }}
+          >
+            <ListItem>
+              <ListItemButton onClick={signOut}>
+                <ListItemText>
+                  <Typography align="right">Sair</Typography>
+                </ListItemText>
+              </ListItemButton>
+            </ListItem>
             <SidebarLiIcon />
           </List>
         </Box>
