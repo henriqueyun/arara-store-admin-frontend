@@ -1,4 +1,8 @@
 const ProductService = (http) => ({
+  save: async (product) => {
+    const { data } = await http.post('/products', product);
+    return data;
+  },
   findAll: async () => {
     const { data } = await http.get('/products');
     return data;

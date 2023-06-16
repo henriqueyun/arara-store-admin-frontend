@@ -19,7 +19,7 @@ const calculateOrderPrice = (items) => {
     (acc, item) =>
       acc +
       calculateDiscount(item.product.price, item.product.discount) *
-        item.quantity,
+      item.quantity,
     0,
   );
   return itemsPrice;
