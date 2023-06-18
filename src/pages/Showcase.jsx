@@ -17,6 +17,7 @@ import {
   Typography,
   alpha,
 } from '@mui/material';
+import Swal from 'sweetalert2';
 import { client } from '../client';
 
 const headCells = [
@@ -131,7 +132,7 @@ function EnhancedTableToolbar(props) {
   );
 }
 
-export default function ShowCase() {
+export default function Showcase() {
   const [selected, setSelected] = useState([]);
   const [products, setProducts] = useState([]);
 
@@ -165,7 +166,23 @@ export default function ShowCase() {
   };
 
   const handleSubmit = async () => {
-    await client.products.setShowCase(selected);
+    const response = await client.products.setShowcase(selected);
+    if (response) {
+      Swal.fire({
+        icon: 'success',
+        title: 'Sucesso',
+        text: 'Vitrine cadastrada com sucesso!',
+        didClose: () => {
+          window.location.reload();
+        },
+      });
+    } else {
+      Swal.fire({
+        icon: 'error',
+        title: 'Erro',
+        text: 'Falha ao salvar!',
+      });
+    }
   };
 
   useEffect(() => {

@@ -23,7 +23,7 @@ export default function Sidebar() {
         <Box sx={{ display: 'flex', flexGrow: 1, justifyContent: 'center' }}>
           <List sx={{ width: '100%' }}>
             <SidebarLi title="Inicio" selected link="" />
-            <SidebarLi title="Vitrine" link="showCase" />
+            <SidebarLi title="Vitrine" link="showcase" />
             <SidebarLi title="Pedidos" link="orders" />
             <SidebarLi title="Roupas" link="products" />
           </List>

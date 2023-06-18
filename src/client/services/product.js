@@ -11,8 +11,8 @@ const ProductService = (http) => ({
     const { data } = await http.get(`/products/${id}`);
     return data;
   },
-  setShowCase: async (products) => {
-    const { data } = await http.post(`/products/showCase`, products);
+  setShowcase: async (products) => {
+    const { data } = await http.post(`/products/showcase`, products);
     return data;
   },
 });

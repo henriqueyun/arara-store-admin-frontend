@@ -38,8 +38,8 @@ const router = createBrowserRouter([
     element: <Component isPrivate variant={<Order />} />,
   },
   {
-    path: '/showCase',
-    element: <Component isPrivate variant={<ShowCase />} />,
+    path: '/showcase',
+    element: <Component isPrivate variant={<Showcase />} />,
   },
   {
     path: '/*',
