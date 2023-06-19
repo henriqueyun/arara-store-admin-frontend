@@ -6,7 +6,7 @@ import {
   Products,
   NotFound,
   ProductForm,
-  ShowCase,
+  Showcase,
   Order,
   Orders,
 } from './pages';

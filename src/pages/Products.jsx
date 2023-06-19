@@ -4,7 +4,7 @@ import { client } from '../client';
 
 function Products() {
   const [products, setProducts] = useState([]);
-  const [selectedProduct, setSelectedProduct] = useState('')
+  const [selectedProduct, setSelectedProduct] = useState('');
 
   useEffect(() => {
     async function getProducts() {
@@ -27,15 +27,29 @@ function Products() {
             </Button>
           </Grid>
           <Grid item>
-            <Button href={`/products/edit/${selectedProduct.id}`} disabled={!selectedProduct} variant="contained">Atualizar</Button>
+            <Button
+              href={`/products/edit/${selectedProduct.id}`}
+              disabled={!selectedProduct}
+              variant="contained"
+            >
+              Atualizar
+            </Button>
           </Grid>
           <Grid item>
-            <Button disabled={!selectedProduct} variant="contained">Desabilitar</Button>
+            <Button disabled={!selectedProduct} variant="contained">
+              Desabilitar
+            </Button>
           </Grid>
         </Grid>
         <Grid container>
           {products.length ? (
-            products.map((product) => <Product onClick={setSelectedProduct} product={product} isSelected={product.id === selectedProduct.id}/>)
+            products.map((product) => (
+              <Product
+                onClick={setSelectedProduct}
+                product={product}
+                isSelected={product.id === selectedProduct.id}
+              />
+            ))
           ) : (
             <Typography>Não há produtos cadastrados</Typography>
           )}
@@ -54,7 +68,9 @@ function Product({ product, isSelected, onClick }) {
       <Grid
         onMouseLeave={() => setisHovered(false)}
         onMouseEnter={() => setisHovered(true)}
-        onClick={() => { onClick(product) }}
+        onClick={() => {
+          onClick(product);
+        }}
         p={2}
         sx={{
           backgroundColor,
